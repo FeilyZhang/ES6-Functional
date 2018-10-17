@@ -13,3 +13,17 @@ const some = (arr, callback) => {
     }
     return result;
 }
+
+const forEach = (arr, callback) => {
+    for (let ele of arr) {
+        callback(ele);
+    }
+}
+
+const map = (arr, callback) => {
+    let result = new Array();
+    for (let ele of arr) {
+        result.push(callback(ele));
+    }
+    return result;
+}
