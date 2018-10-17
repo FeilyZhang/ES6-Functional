@@ -27,3 +27,11 @@ const map = (arr, callback) => {
     }
     return result;
 }
+
+const filter = (arr, callback) => {
+    let result = [];
+    for (let ele of arr) {
+        (callback(ele)) ? result.push(ele) : undefined;
+    }
+    return result;
+}
