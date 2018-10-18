@@ -44,3 +44,22 @@ const curry = (callback) => {
         return callback.apply(null, args);
     }
 }
+
+const reduce = (array, callback, initialValue) => {
+    let accumlator;
+    if (initialValue != undefined) {
+        accumlator = initialValue;
+    } else {
+        accumlator = array[0];
+    }
+    if (initialValue === undefined) {
+        for (let i = 1; i < array.length; i++) {
+            accumlator = callback(accumlator, array[i]);
+        }
+    } else {
+        for (const ele of array) {
+            accumlator = callback(accumlator, ele);
+        }
+    }
+    return [accumlator];
+}
