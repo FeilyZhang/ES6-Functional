@@ -159,3 +159,43 @@ var curry = function curry(callback) {
         return callback.apply(null, args);
     };
 };
+
+var reduce = function reduce(array, callback, initialValue) {
+    var accumlator = void 0;
+    if (initialValue != undefined) {
+        accumlator = initialValue;
+    } else {
+        accumlator = array[0];
+    }
+    if (initialValue === undefined) {
+        for (var i = 1; i < array.length; i++) {
+            accumlator = callback(accumlator, array[i]);
+        }
+    } else {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+            for (var _iterator = array[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var ele = _step.value;
+
+                accumlator = callback(accumlator, ele);
+            }
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion && _iterator.return) {
+                    _iterator.return();
+                }
+            } finally {
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
+    }
+    return [accumlator];
+};
