@@ -35,3 +35,12 @@ const filter = (arr, callback) => {
     }
     return result;
 }
+
+const curry = (callback) => {
+    if (typeof callback !== 'function') {
+        throw Error('No function provided');
+    }
+    return (...args) => {
+        return callback.apply(null, args);
+    }
+}
