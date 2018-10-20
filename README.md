@@ -9,3 +9,11 @@ Check if all elements in the passed array are all NaN.
 const some = (arr, callback)
 ```
 Check if at least one of all elements in the passed in array is NaN.
+```
+const forEach = (arr, callback)
+```
+Traversing the array and manipulating the elements through a callback function.
+```
+const map = (arr, callback)
+```
+It is basically the same as the forEach function, but the result of the operation of the callback function on the element is pushed into the array, and finally the result is unified.
