@@ -199,3 +199,15 @@ var reduce = function reduce(array, callback, initialValue) {
     }
     return [accumlator];
 };
+
+var compose = function compose() {
+    for (var _len = arguments.length, callbacks = Array(_len), _key = 0; _key < _len; _key++) {
+        callbacks[_key] = arguments[_key];
+    }
+
+    return function (value) {
+        return reduce(callbacks.reverse(), function (acc, callback) {
+            return callback(acc);
+        }, value);
+    };
+};
