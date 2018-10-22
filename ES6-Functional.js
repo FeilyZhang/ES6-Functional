@@ -63,3 +63,7 @@ const reduce = (array, callback, initialValue) => {
     }
     return [accumlator];
 }
+
+const compose = (...callbacks) => 
+    (value) =>
+        reduce(callbacks.reverse(), (acc, callback) => callback(acc), value);
