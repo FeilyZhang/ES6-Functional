@@ -67,3 +67,7 @@ const reduce = (array, callback, initialValue) => {
 const compose = (...callbacks) => 
     (value) =>
         reduce(callbacks.reverse(), (acc, callback) => callback(acc), value);
+
+const pipe = (...callbacks) => 
+    (value) =>
+        reduce(callbacks, (acc, callback) => callback(acc), value);
