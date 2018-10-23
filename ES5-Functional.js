@@ -211,3 +211,15 @@ var compose = function compose() {
         }, value);
     };
 };
+
+var pipe = function pipe() {
+    for (var _len = arguments.length, callbacks = Array(_len), _key = 0; _key < _len; _key++) {
+        callbacks[_key] = arguments[_key];
+    }
+
+    return function (value) {
+        return reduce(callbacks, function (acc, callback) {
+            return callback(acc);
+        }, value);
+    };
+};
