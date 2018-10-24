@@ -71,3 +71,13 @@ const compose = (...callbacks) =>
 const pipe = (...callbacks) => 
     (value) =>
         reduce(callbacks, (acc, callback) => callback(acc), value);
+
+const isEmpty = (str) => {
+  if (str === undefined || str === null || new String(str).trim()== '') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+const GUID = (decimal) => new Date().getTime().toString(decimal);
