@@ -25,3 +25,8 @@ Filter the array elements and return them in the array of pushed results that ma
 const curry = (callback)
 ```
 Currying, used to convert a multi-parameter function into a nested unary function.
+```
+const compose = (...callbacks)
+const pipe = (...callbacks)
+```
+Functional combination and pipeline
