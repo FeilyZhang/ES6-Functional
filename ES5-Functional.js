@@ -223,3 +223,15 @@ var pipe = function pipe() {
         }, value);
     };
 };
+
+var isEmpty = function isEmpty(str) {
+  if (str === undefined || str === null || new String(str).trim() == '') {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+var GUID = function GUID(decimal) {
+  return new Date().getTime().toString(decimal);
+};
