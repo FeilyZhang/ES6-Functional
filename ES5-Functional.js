@@ -243,3 +243,8 @@ var isEqual = function isEqual(arr1, arr2) {
     }
     return true;
 };
+
+var isEmail = function isEmail(str) {
+    return (/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(str)
+    );
+};
