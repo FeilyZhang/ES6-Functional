@@ -89,3 +89,6 @@ const isEqual = (arr1, arr2) => {
     }
     return true;
 }
+
+const isEmail = (str) =>
+    /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(str);
