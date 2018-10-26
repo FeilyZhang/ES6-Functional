@@ -235,3 +235,11 @@ var isEmpty = function isEmpty(str) {
 var GUID = function GUID(decimal) {
   return new Date().getTime().toString(decimal);
 };
+
+var isEqual = function isEqual(arr1, arr2) {
+    if (arr1.length != arr2.length) return false;
+    for (var index in arr1) {
+        if (arr1[index] != arr2[index]) return false;
+    }
+    return true;
+};
