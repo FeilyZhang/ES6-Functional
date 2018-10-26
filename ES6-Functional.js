@@ -81,3 +81,11 @@ const isEmpty = (str) => {
 }
 
 const GUID = (decimal) => new Date().getTime().toString(decimal);
+
+const isEqual = (arr1, arr2) => {
+    if (arr1.length != arr2.length) return false;
+    for (let index in arr1) {
+        if (arr1[index] != arr2[index]) return false;
+    }
+    return true;
+}
