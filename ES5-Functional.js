@@ -248,3 +248,12 @@ var isEmail = function isEmail(str) {
     return (/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(str)
     );
 };
+
+var extend = function extend(des, src) {
+  for (var key in src) {
+    if (src.hasOwnProperty(key)) {
+      des[key] = src[key];
+    }
+  }
+  return des;
+};
