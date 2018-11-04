@@ -92,3 +92,12 @@ const isEqual = (arr1, arr2) => {
 
 const isEmail = (str) =>
     /\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/.test(str);
+
+const extend = (des, src) => {
+  for (let key in src) {
+    if (src.hasOwnProperty(key)) {
+      des[key] = src[key];
+    }
+  }
+  return des;
+}
